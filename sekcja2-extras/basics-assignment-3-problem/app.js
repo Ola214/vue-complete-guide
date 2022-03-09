@@ -17,7 +17,11 @@ const app = Vue.createApp({
     },
     watch: {
         result() {
-            
+            console.log('Watcher executing...');
+            const that = this;
+            setTimeout(function() {
+                that.number = 0;
+            }, 5000);
         }
     },
     methods: {
