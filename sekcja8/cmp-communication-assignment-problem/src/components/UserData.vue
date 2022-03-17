@@ -1,9 +1,19 @@
 <template>
   <section>
-    <input type="text" placeholder="Your name" />
-    <input type="text" placeholder="Your age" />
+    <form action="">
+      <input type="text" placeholder="Your name" v-model="enteredName" />
+      <input type="text" placeholder="Your age" v-model="enteredAge" />
+      <button>Set User Data</button>
+    </form>
   </section>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      enteredName: "",
+      enteredAge: "",
+    };
+  },
+};
 </script>
