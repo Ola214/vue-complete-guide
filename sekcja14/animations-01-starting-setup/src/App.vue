@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="block"></div>
-      <button>Animate</button>
+      <button @click="animateBlock">Animate</button>
     </div>
     <base-modal @close="hideDialog" v-if="dialogIsVisible">
       <p>This is a test dialog!</p>
@@ -17,9 +17,13 @@
 <script>
 export default {
   data() {
-    return { dialogIsVisible: false };
+    return {
+      animatedBlock: false,
+      dialogIsVisible: false,
+    };
   },
   methods: {
+    animateBlock() {},
     showDialog() {
       this.dialogIsVisible = true;
     },
