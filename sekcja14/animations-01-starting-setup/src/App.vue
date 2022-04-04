@@ -52,10 +52,19 @@ export default {
     beforeEnter(el) {
       console.log('beforeEnter');
       console.log(el);
+      el.style.opacity = 0;
     },
     enter(el) {
       console.log('enter');
       console.log(el);
+      let round = 1;
+      const interval = setInterval(function () {
+        el.style.opacity = round * 0.1;
+        round++;
+        if (round > 10) {
+          clearInterval(interval);
+        }
+      }, 20);
     },
     afterEnter(el) {
       console.log('afterEnter');
@@ -141,36 +150,6 @@ button:active {
 .animate {
   /* transform: translateX(-150px); */
   animation: slide-scale 0.3s ease-out forwards;
-}
-
-.para-enter-from {
-  /* opacity: 0;
-  transform: translateY(-30px); */
-}
-
-.para-enter-active {
-  /* transition: all 0.3s ease-out; */
-  animation: slide-scale 2s ease-out;
-}
-
-.para-enter-to {
-  /* opacity: 1;
-  transform: translateY(0); */
-}
-
-.para-leave-from {
-  /* opacity: 1;
-  transform: translateY(0); */
-}
-
-.para-leave-active {
-  /* transition: all 0.3s ease-in; */
-  animation: slide-scale 0.3s ease-out;
-}
-
-.para-leave-to {
-  /* opacity: 0;
-  transform: translateY(30px); */
 }
 
 .fade-button-enter-from,
