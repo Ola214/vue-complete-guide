@@ -26,6 +26,7 @@ export default {
       // this.$router.back();
     },
   },
+  beforeRouteEnter(to, from, next) {},
 };
 </script>
 
