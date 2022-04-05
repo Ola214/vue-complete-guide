@@ -5,10 +5,17 @@ import App from './App.vue';
 
 const store = createStore({
     state() {
-        return 
-        {
+        return {
             counter: 0
         };
+    },
+    mutations: {
+        increment(state) {
+            state.counter = state.counter + 2;
+        },
+        increase(state, payload) {
+            state.counter = state.counter + payload.value;
+        }
     }
 });
 
